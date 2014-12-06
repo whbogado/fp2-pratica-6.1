@@ -1,8 +1,6 @@
 
-import java.util.HashMap;
-import utfpr.dainf.if62c.pratica.Jogador;
-
-
+import utfpr.ct.dainf.if62c.pratica.Jogador;
+import utfpr.ct.dainf.if62c.pratica.Time;
 
 /**
  * IF62C Fundamentos de Programação 2
@@ -12,22 +10,22 @@ import utfpr.dainf.if62c.pratica.Jogador;
 public class Pratica61 {
 
     public static void main(String[] args) {
-        HashMap<String, Jogador> time1 = new HashMap<>();
-        HashMap<String, Jogador> time2 = new HashMap<>();
+        Time time1 = new Time();
+        Time time2 = new Time();
+        
+        time1.addJogador("Lateral", new Jogador(4, "Ciclano"));
+        time1.addJogador("Goleiro", new Jogador(1, "Fulano"));
+        time1.addJogador("Atacante", new Jogador(10, "Beltrano"));
 
-        time1.put("Lateral", new Jogador(4, "Ciclano"));
-        time1.put("Goleiro", new Jogador(1, "Fulano"));
-        time1.put("Atacante", new Jogador(10, "Beltrano"));
-
-        time2.put("Atacante", new Jogador(10, "Mário"));
-        time2.put("Goleiro", new Jogador(1, "João"));
-        time2.put("Lateral", new Jogador(7, "José"));
+        time2.addJogador("Atacante", new Jogador(15, "Mário"));
+        time2.addJogador("Goleiro", new Jogador(1, "João"));
+        time2.addJogador("Lateral", new Jogador(7, "José"));
 
         String format = "%-20s %-20s %-20s";
         System.out.println(String.format(format, "Posição", "Time 1", "Time 2"));
-        for (String posicao: time1.keySet()) {
-            Jogador j1 = time1.get(posicao);
-            Jogador j2 = time2.get(posicao);
+        for (String posicao: time1.getJogadores().keySet()) {
+            Jogador j1 = time1.getJogadores().get(posicao);
+            Jogador j2 = time2.getJogadores().get(posicao);
             System.out.println(String.format(format, posicao, j1, j2));
         }
     }
