@@ -8,7 +8,7 @@ import java.util.HashMap;
  * @author Wilson Horstmeyer Bogado <wilson@utfpr.edu.br>
  */
 public class Time {
-    private final HashMap<String, Jogador> jogadores = new HashMap();
+    private final HashMap<String, Jogador> jogadores = new HashMap<>();
 
     public Time() {
     }
